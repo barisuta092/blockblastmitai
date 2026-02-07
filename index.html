@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Block Blast Clone</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/src/style.css">
+</head>
+
+<body>
+  <div id="game-wrapper">
+    <header>
+      <div id="score-container">
+        <span class="label">SCORE</span>
+        <span id="score">0</span>
+      </div>
+      <div id="best-score-container">
+        <span class="label">BEST</span>
+        <span id="best-score">0</span>
+      </div>
+    </header>
+
+    <div id="game-container">
+      <canvas id="gameCanvas"></canvas>
+      <div id="message-overlay" class="hidden">
+        <div class="content">
+          <h2 id="msg-title">GAME OVER</h2>
+          <p id="final-score">Score: 1234</p>
+          <button id="restart-btn">Try Again</button>
+        </div>
+      </div>
+      <div id="popup"></div>
+    </div>
+
+    <div id="controls-hint">Drag blocks to the grid</div>
+  </div>
+  <script type="module" src="/src/main.js"></script>
+</body>
+
+</html>
