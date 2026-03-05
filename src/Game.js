@@ -26,7 +26,7 @@ export class Game {
 
     init() {
         this.resize();
-        
+
         // Use ResizeObserver for more reliable resize detection, especially on mobile
         const container = this.canvas.parentElement;
         if (container) {
@@ -282,12 +282,11 @@ export class Game {
         const container = this.canvas.parentElement;
         if (!container) return;
 
-        // Fallback to window dimensions if container is 0
-        const clientWidth = container.clientWidth || window.innerWidth;
-        const clientHeight = container.clientHeight || window.innerHeight;
+        const clientWidth = container.clientWidth;
+        const clientHeight = container.clientHeight;
 
         // Don't resize if dimensions are 0 to prevent canvas vanishing
-        if (clientWidth === 0 || clientHeight === 0) return;
+        if (!clientWidth || !clientHeight) return;
 
         this.canvas.width = clientWidth;
         this.canvas.height = clientHeight;
